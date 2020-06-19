@@ -1,0 +1,15 @@
+$color-orange: #fe5000;
+
+.main {
+  border: 1px solid $color-orange;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+
+  img {
+    width: 100%;
+  }
+}
