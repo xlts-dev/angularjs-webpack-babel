@@ -12,6 +12,8 @@ AngularJS 1.8, Webpack 4, Babel 7, ES6 modules, Karma, HMR (Hot Module Reload) e
 - Source mapping
 - ngAnnotate support
 - HMR (Hot Module Reload) support via Babel plugin
+- ESLint
+- Husky + lint-staged + Prettier
 
 ## Getting Started
 
