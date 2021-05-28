@@ -1,6 +1,6 @@
 {
   "name": "angularjs-webpack-babel",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "AngularJS 1.8 ES6 boilerplate with Webpack 4",
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
     "start": "webpack-dev-server --open --mode development",
     "test": "karma start karma.config.js",
     "build": "webpack --mode production",
-    "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
+    "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html}\"",
     "lint": "eslint .",
     "update": "npx npm-check -u"
   },
