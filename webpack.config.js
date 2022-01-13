@@ -59,10 +59,6 @@ module.exports = (_env, argv = {}) => {
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: true,
-                esModule: true,
-              },
             },
             'css-loader',
             'postcss-loader',

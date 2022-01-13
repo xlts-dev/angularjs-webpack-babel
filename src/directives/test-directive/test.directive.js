@@ -1,15 +1,17 @@
+import template from './test.directive.html';
+import './test.directive.scss';
+
 export default ngModule => {
   if (TEST_MODE) {
     require('./test.directive.test').default(ngModule);
   }
-  require('./test.directive.scss');
 
   ngModule.directive('testDirective', $log => {
     return {
       restrict: 'E',
       scope: {},
       // templateUrl: 'src/directives/test.directive.html',
-      template: require('./test.directive.html'),
+      template,
       controllerAs: 'vm',
       controller: function () {
         const vm = this;
