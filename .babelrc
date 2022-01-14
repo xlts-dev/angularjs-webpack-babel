@@ -5,7 +5,7 @@
       "@babel/preset-env",
       {
         "corejs": 3,
-        "modules": false, // `false` will not transform ES6 module syntax
+        "modules": "commonjs", // resolves https://github.com/noppa/ng-hot-reload/issues/31
         "shippedProposals": true,
         "useBuiltIns": "usage"
       }
@@ -21,20 +21,6 @@
       "angularjs-annotate",
       {
         "explicitOnly": false
-      }
-    ],
-    [
-      // https://www.npmjs.com/package/babel-plugin-ng-hot-reload
-      "babel-plugin-ng-hot-reload",
-      {
-        // TODO: determine if this should be `true`
-        "angularGlobal": false, // "angular" would be the on state
-        "forceRefresh": true,
-        // If true, the library attempts to preserve some state in scope and controller instances when they are reloaded.
-        // Preserving state is an experimental feature and quite "hackish" so it may cause problems in some cases.
-        // Setting this to false might help if you run into weird errors.
-        "preserveState": true,
-        "angularReference": "require('angular'), angular"
       }
     ]
   ]

@@ -5,9 +5,23 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
+let jsLoaders = ['babel-loader'];
+let entry = ['./src/index.js'];
+
 module.exports = (_env, argv = {}) => {
   const isDevMode = argv.mode === 'development';
   const isTestMode = argv.mode === 'test';
+
+  if (isDevMode) {
+    // Enables hot-reloading using the ng-hot-reload library
+    // Only used in development, not in production.
+    jsLoaders = ['ng-hot-reload-loader', ...jsLoaders];
+    entry = [
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/only-dev-server',
+      ...entry,
+    ];
+  }
 
   console.log('[Webpack Config] NODE_ENV:', process.env.NODE_ENV);
   console.log('[Webpack Config] argv.mode:', argv.mode);
@@ -15,6 +29,7 @@ module.exports = (_env, argv = {}) => {
   // TODO: consider a separate `webpack.dev.js` and `webpack.build.js` files, etc, that import a shared base config
 
   return {
+    entry,
     devtool: 'source-map',
     devServer: {
       hot: true,
@@ -68,11 +83,7 @@ module.exports = (_env, argv = {}) => {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          use: [
-            {
-              loader: 'babel-loader',
-            },
-          ],
+          use: jsLoaders,
         },
       ],
     },
