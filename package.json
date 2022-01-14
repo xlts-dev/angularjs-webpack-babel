@@ -1,7 +1,7 @@
 {
   "name": "angularjs-webpack-babel",
   "version": "1.2.1",
-  "description": "AngularJS 1.8 ES6 boilerplate with Webpack 4",
+  "description": "AngularJS 1.8 ES6 boilerplate with Webpack 5",
   "repository": {
     "type": "git",
     "url": "https://github.com/xlts-dev/angularjs-webpack-babel"
@@ -26,6 +26,11 @@
       "name": "Mark Schlitz",
       "email": "mschlitz42@gmail.com",
       "url": "https://github.com/mschlitz-trux"
+    },
+    {
+      "name": "Ed Clement",
+      "email": "ed@xlts.dev",
+      "url": "https://github.com/edclement"
     }
   ],
   "main": "index.js",

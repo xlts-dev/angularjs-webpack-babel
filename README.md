@@ -1,11 +1,11 @@
 # XLTS for AngularJS with Webpack
 
-XLTS for AngularJS, Webpack 4, Babel 7, ES6 modules, Karma, HMR (Hot Module Reload) enabled
+XLTS for AngularJS, Webpack 5, Babel 7, ES6 modules, Karma, HMR (Hot Module Reload) enabled
 
 ## Features
 
 - [XLTS for AngularJS](https://xlts.dev/angularjs)
-- Webpack 4
+- Webpack 5
 - Babel 7
 - CoreJS
 - SASS support
