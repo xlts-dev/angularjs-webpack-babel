@@ -1,6 +1,6 @@
 {
   "name": "angularjs-webpack-babel",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "XLTS for AngularJS ES6 boilerplate with Webpack 5",
   "repository": {
     "type": "git",
