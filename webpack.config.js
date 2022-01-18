@@ -30,7 +30,7 @@ module.exports = (_env, argv = {}) => {
 
   return {
     entry,
-    devtool: 'source-map',
+    devtool: isDevMode ? 'source-map' : false,
     devServer: {
       hot: true,
       //hotOnly: true,
