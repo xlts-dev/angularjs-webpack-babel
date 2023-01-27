@@ -1,4 +1,3 @@
-//? our webpack config imports as a function, and running it returns the required object to be used below
 const webpackConfig = require('./webpack.config.js')(null, { mode: 'test' });
 // clear entry file config (if exists)
 webpackConfig.entry = () => ({});
