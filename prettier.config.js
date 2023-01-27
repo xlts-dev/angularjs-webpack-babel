@@ -1,10 +1,10 @@
 module.exports = {
-  printWidth: 100,
+  printWidth: 140,
   tabWidth: 2,
   useTabs: false,
   semi: true,
   singleQuote: true,
-  trailingComma: 'all',
+  trailingComma: 'es5',
   bracketSpacing: true,
   arrowParens: 'avoid',
   rangeStart: 0,
