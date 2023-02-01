@@ -45,3 +45,21 @@ For testing
 ```
 npm test
 ```
+
+For lint
+
+```
+npm lint
+```
+
+For e2e
+
+```
+npm run e2e
+```
+
+For run production locally
+
+```
+npm run start:prod-local
+```

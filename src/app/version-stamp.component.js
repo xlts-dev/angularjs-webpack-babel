@@ -31,12 +31,18 @@ export const versionStampComponent = {
   controller: VersionStampCtrl,
 };
 
-VersionStampCtrl.$inject = ['$window'];
-function VersionStampCtrl($window) {
-  this.angularJsIcon = require('../assets/angularjs.svg');
-  this.angularjsMaterialIcon = require('../assets/angularjs-material.png');
-  this.versions = {
-    angularjs: angular.version,
-    md: $window.ngMaterial.version.full,
-  };
+class VersionStampCtrl {
+  static $inject = ['$window'];
+  angularJsIcon;
+  angularjsMaterialIcon;
+  versions;
+
+  constructor($window) {
+    this.angularJsIcon = require('../assets/angularjs.svg');
+    this.angularjsMaterialIcon = require('../assets/angularjs-material.png');
+    this.versions = {
+      angularjs: angular.version,
+      md: $window.ngMaterial.version.full,
+    };
+  }
 }
