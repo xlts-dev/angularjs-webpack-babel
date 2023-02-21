@@ -3,7 +3,7 @@ import 'angular-animate';
 import 'angular-aria';
 import 'angular-material';
 import 'angular-sanitize';
-import './templates';
+import './templates/templates';
 import * as angular from 'angular';
 import packageInfo from '../../package.json';
 import { appAngularjsComponent } from './app-angularjs.component';

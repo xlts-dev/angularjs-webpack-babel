@@ -4,5 +4,4 @@ export const appAngularjsComponent = {
              <footer>
                 <app-version-stamp></app-version-stamp>
              </footer>`,
-  controller: class AppAngularjsCtrl {},
 };

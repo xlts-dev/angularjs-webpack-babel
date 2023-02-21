@@ -7,7 +7,7 @@
     "node": true
   },
   "globals": {
-    "angular": true,
+    "angular": true
   },
   "plugins": ["prettier", "angular", "import-order"],
   "extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:import-order/recommended"],
