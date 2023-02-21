@@ -36,13 +36,19 @@
       "name": "Michael Prentice",
       "email": "michael@xlts.dev",
       "url": "https://github.com/splaktar"
+    },
+    {
+      "name": "Jaroslaw Zolnowski",
+      "email": "jarek@xlts.dev",
+      "url": "https://github.com/jzolnowski"
     }
   ],
   "main": "main.js",
   "scripts": {
+    "pre-commit": "lint-staged && npm run lint",
+    "build:templates": "gulp templates",
     "start": "npm run build:templates && webpack-dev-server --open --mode development --config config/webpack.dev.mjs",
     "test": "karma start karma.config.js",
-    "build:templates": "gulp templates",
     "watch:templates": "gulp watch",
     "build": "npm run build:templates && webpack --mode production --config config/webpack.prod.mjs",
     "start:prod-local": "cd dist && http-server -p 4200 -c-1 -b",
@@ -50,7 +56,7 @@
     "lint": "eslint .",
     "e2e": "playwright test",
     "e2e:debug": "playwright test --project chromium --headed",
-    "update": "npx npm-check -u",
+    "update": "npm-check -u",
     "prepare": "husky install"
   },
   "browserslist": [
@@ -77,6 +83,7 @@
     "angular-mocks": "npm:@xlts.dev/angular-mocks@^1.9.1",
     "autoprefixer": "10.4.13",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^9.1.2",
     "babel-plugin-angularjs-annotate": "^0.10.0",
     "clean-webpack-plugin": "4.0.0",

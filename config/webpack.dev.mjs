@@ -1,4 +1,4 @@
-import { common } from './common.mjs';
+import { webpackCommonConfig } from './webpack-common-config.mjs';
 import { paths } from './helpers.mjs';
 
 export default {
@@ -7,7 +7,7 @@ export default {
     'webpack/hot/only-dev-server',
     paths.src + '/main.js',
   ],
-  ...common,
+  ...webpackCommonConfig,
   mode: 'development',
   devtool: 'source-map',
   output: {

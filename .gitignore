@@ -3,6 +3,7 @@ dist
 node_modules
 
 .eslintcache
+templates
 /test-results/
 /playwright-report/
 /playwright/.cache/

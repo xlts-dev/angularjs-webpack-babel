@@ -1,12 +1,12 @@
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
-import { common } from './common.mjs';
+import { webpackCommonConfig } from './webpack-common-config.mjs';
 import { paths } from './helpers.mjs';
 
 export default {
   entry: {
     main: paths.src + '/main.js',
   },
-  ...common,
+  ...webpackCommonConfig,
   mode: 'production',
   devtool: false,
   output: {
