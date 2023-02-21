@@ -36,17 +36,24 @@
       "name": "Michael Prentice",
       "email": "michael@xlts.dev",
       "url": "https://github.com/splaktar"
+    },
+    {
+      "name": "Jaroslaw Zolnowski",
+      "email": "jarek@xlts.dev",
+      "url": "https://github.com/jzolnowski"
     }
   ],
   "main": "main.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development --config config/webpack.dev.mjs",
+    "pre-commit": "lint-staged && npm run lint",
+    "build:templates": "gulp templates",
+    "start": "npm run build:templates && webpack-dev-server --open --mode development --config config/webpack.dev.mjs",
     "test": "karma start karma.config.js",
-    "build": "webpack --mode production --config config/webpack.prod.mjs",
+    "build": "npm run build:templates && webpack --mode production --config config/webpack.prod.mjs",
     "start:prod-local": "cd dist && http-server -p 4200 -c-1 -b",
     "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html}\"",
     "lint": "eslint .",
-    "update": "npx npm-check -u",
+    "update": "npm-check -u",
     "prepare": "husky install"
   },
   "browserslist": [
@@ -108,7 +115,7 @@
     "webpack-dev-server": "4.11.1"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
+    "*.{js,mjs}": "eslint --cache --fix",
     "*.{js,json,css,scss,less,md,ts,html}": "prettier --write"
   }
 }

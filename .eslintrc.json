@@ -5,8 +5,7 @@
     "commonjs": true
   },
   "globals": {
-    "angular": true,
-    "go": true
+    "angular": true
   },
   "plugins": ["prettier", "angular"], // https://github.com/Gillespie59/eslint-plugin-angular
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
