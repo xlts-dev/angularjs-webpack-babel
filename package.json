@@ -116,7 +116,7 @@
     "webpack-dev-server": "4.11.1"
   },
   "lint-staged": {
-    "*.{js,mjs}": "eslint --cache --fix",
+    "*.js": "eslint --cache --fix",
     "*.{js,json,css,scss,less,md,ts,html}": "prettier --write"
   }
 }
