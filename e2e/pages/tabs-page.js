@@ -5,6 +5,7 @@ export class TabsPage {
   tabThree;
   tabThreeContent;
   buttons;
+
   constructor(page) {
     this.page = page;
     this.tabTwo = page.getByRole('tab', { name: 'Tab two' });

@@ -9,7 +9,6 @@ class TabsCtrl {
   $digestCount = 0;
 
   constructor($scope) {
-    this.$digestCount = 0;
     $scope.$watch(() => {
       this.$digestCount++;
       if (this.$digestCount % 100 === 0) {

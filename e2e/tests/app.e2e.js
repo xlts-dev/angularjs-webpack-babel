@@ -1,13 +1,22 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import { TabsPage } from '../pages/tabs-page';
 import { ButtonsPage } from '../pages/buttons-page';
 
 test.describe('AngularJS-Webpack-Babel app', () => {
-  // eslint-disable-next-line
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:8083/');
+    await page.goto('');
   });
-  // eslint-disable-next-line
+
+  test.afterEach(async ({ page }) => {
+    const errorLogs = [];
+    page.on('console', message => {
+      if (message.type() === 'error') {
+        errorLogs.push(message.text());
+      }
+    });
+    expect(errorLogs).toStrictEqual([]);
+  });
+
   test('Tabs', async ({ page }) => {
     const tabsPage = new TabsPage(page);
 
@@ -18,15 +27,16 @@ test.describe('AngularJS-Webpack-Babel app', () => {
     await tabsPage.tabThree.click();
     await expect(tabsPage.tabThree).toHaveText('Tab three');
     await expect(tabsPage.tabThreeContent).toHaveText('Tab three content');
+    await expect(tabsPage.tabTwoContent).not.toBeVisible();
 
     await tabsPage.buttons.click();
     await expect(tabsPage.buttons).toHaveText('Buttons');
+    await expect(tabsPage.tabThreeContent).not.toBeVisible();
   });
-  // eslint-disable-next-line
+
   test('Buttons', async ({ page }) => {
     const buttonsPage = new ButtonsPage(page);
 
-    await page.waitForTimeout(1000);
     await expect(await buttonsPage.flatButtons.all()).toHaveLength(5);
     await expect(await buttonsPage.raisedButtons.all()).toHaveLength(5);
   });

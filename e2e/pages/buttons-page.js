@@ -3,6 +3,7 @@ export class ButtonsPage {
   buttons;
   flatButtons;
   raisedButtons;
+
   constructor(page) {
     this.page = page;
     this.buttons = page.getByRole('tab', { name: 'Buttons' });

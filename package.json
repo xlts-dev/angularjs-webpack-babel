@@ -48,16 +48,17 @@
     "pre-commit": "lint-staged && npm run lint",
     "build:templates": "gulp templates",
     "start": "npm run build:templates && webpack-dev-server --open --mode development --config config/webpack.dev.mjs",
-    "test": "karma start karma.config.js",
+    "lint": "eslint .",
+    "test:unit": "npm run lint && karma start karma.config.js",
     "watch:templates": "gulp watch",
     "build": "npm run build:templates && webpack --mode production --config config/webpack.prod.mjs",
     "start:prod-local": "cd dist && http-server -p 4200 -c-1 -b",
     "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html}\"",
-    "lint": "eslint .",
-    "e2e": "playwright test",
-    "e2e:debug": "playwright test --project chromium --headed",
+    "test:e2e": "npm run lint && playwright test",
+    "test:e2e:debug": "playwright test --project chromium --headed",
+    "test:e2e-report": " npx playwright show-report",
     "update": "npm-check -u",
-    "prepare": "husky install"
+    "prepare": "husky install && npx playwright install"
   },
   "browserslist": [
     "last 2 versions"
@@ -80,6 +81,7 @@
     "@babel/plugin-proposal-object-rest-spread": "7.20.7",
     "@babel/plugin-transform-object-assign": "7.18.6",
     "@babel/preset-env": "7.20.2",
+    "@playwright/test": "^1.30.0",
     "angular-mocks": "npm:@xlts.dev/angular-mocks@^1.9.1",
     "autoprefixer": "10.4.13",
     "babel-core": "^6.26.3",
@@ -95,7 +97,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "gulp": "~4.0.2",
     "gulp-angular-templatecache": "~3.0.1",
-    "@playwright/test": "^1.30.0",
     "gulp-htmlmin": "~5.0.1",
     "html-loader": "4.2.0",
     "html-webpack-plugin": "5.5.0",
