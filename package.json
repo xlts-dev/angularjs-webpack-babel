@@ -47,7 +47,9 @@
   "scripts": {
     "pre-commit": "lint-staged && npm run lint",
     "build:templates": "gulp templates",
-    "start": "npm run build:templates && webpack-dev-server --open --mode development --config config/webpack.dev.mjs",
+    "start:server": "webpack-dev-server --open --mode development --config config/webpack.dev.mjs",
+    "gulp:watch": "gulp watch",
+    "start": "npm run build:templates && npm-run-all -p start:server gulp:watch",
     "test": "karma start karma.config.js",
     "build": "npm run build:templates && webpack --mode production --config config/webpack.prod.mjs",
     "start:prod-local": "cd dist && http-server -p 4200 -c-1 -b",
@@ -105,6 +107,7 @@
     "mini-css-extract-plugin": "^2.7.2",
     "ng-hot-reload-loader": "^3.3.2",
     "npm-check": "^6.0.1",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.21",
     "postcss-loader": "7.0.2",
     "prettier": "^2.8.3",
