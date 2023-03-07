@@ -14,16 +14,4 @@ export class TabsPage {
     this.tabThreeContent = page.getByTestId('tab-three-content');
     this.buttons = page.getByRole('tab', { name: 'Buttons' });
   }
-
-  async clickOnButtonsTab() {
-    await this.buttons.click();
-  }
-
-  async clickOnTabTwo() {
-    await this.tabTwo.click();
-  }
-
-  async clickOnTabThree() {
-    await this.tabThree.click();
-  }
 }
