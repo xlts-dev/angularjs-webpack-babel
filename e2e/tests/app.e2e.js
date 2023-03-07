@@ -3,17 +3,25 @@ import { TabsPage } from '../pages/tabs-page';
 import { ButtonsPage } from '../pages/buttons-page';
 
 test.describe('AngularJS-Webpack-Babel app', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('');
-  });
+  let errorLogs;
 
-  test.afterEach(async ({ page }) => {
-    const errorLogs = [];
+  test.beforeEach(async ({ page }) => {
+    errorLogs = [];
+
     page.on('console', message => {
       if (message.type() === 'error') {
         errorLogs.push(message.text());
       }
     });
+
+    page.on('pageerror', err => {
+      errorLogs.push(err.message);
+    });
+
+    await page.goto('');
+  });
+
+  test.afterEach(async () => {
     expect(errorLogs).toStrictEqual([]);
   });
 
