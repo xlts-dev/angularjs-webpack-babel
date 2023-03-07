@@ -25,8 +25,8 @@ export const versionStampComponent = {
 
     <md-divider id="version-stamp-divider"></md-divider>
     <div class="version-container">
-      <span class="version"><img src="{{ $ctrl.angularJsIcon }}" alt=""> AngularJS v{{ $ctrl.versions.angularjs.full }} ({{ $ctrl.versions.angularjs.codeName }})</span>
-      <span class="version"><img src="{{ $ctrl.angularjsMaterialIcon }}" alt=""> AngularJS Material v{{ $ctrl.versions.md }}</span>
+      <span class="version"><img src="{{ $ctrl.angularJsIcon }}" alt="" height="24"> AngularJS v{{ $ctrl.versions.angularjs.full }} ({{ $ctrl.versions.angularjs.codeName }})</span>
+      <span class="version"><img src="{{ $ctrl.angularjsMaterialIcon }}" alt="" height="24"> AngularJS Material v{{ $ctrl.versions.md }}</span>
     </div>
   `,
   controller: VersionStampCtrl,
