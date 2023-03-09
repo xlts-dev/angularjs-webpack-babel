@@ -58,7 +58,7 @@
     "test:e2e": "playwright test",
     "test:e2e:debug": "playwright test --project chromium --headed",
     "test:e2e:report": "npx playwright show-report",
-    "test": "run-s test:e2e lint test:unit",
+    "test": "run-s lint test:unit test:e2e",
     "update": "npm-check -u",
     "prepare": "husky install && npx playwright install"
   },

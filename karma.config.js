@@ -3,7 +3,7 @@ module.exports = config => {
     basePath: '',
 
     // frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'webpack'],
 
     // This will be the new entry to webpack so it should just be a single file
     files: ['src/index.tests.js'],
