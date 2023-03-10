@@ -11,6 +11,9 @@ export const versionStampComponent = {
         padding: 8px;
       }
       .version {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
         font-size: 0.75em;
         font-style: italic;
       }
