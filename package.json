@@ -78,6 +78,7 @@
     "@babel/plugin-proposal-object-rest-spread": "7.20.7",
     "@babel/plugin-transform-object-assign": "7.18.6",
     "@babel/preset-env": "7.20.2",
+    "@babel/register": "^7.21.0",
     "angular-mocks": "npm:@xlts.dev/angular-mocks@^1.9.1",
     "autoprefixer": "10.4.13",
     "babel-core": "^6.26.3",
