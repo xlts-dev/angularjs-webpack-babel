@@ -19,8 +19,19 @@
   "globals": {
     "TEST_MODE": true
   },
+  "plugins": ["import-order"],
+  "extends": ["eslint:recommended", "plugin:import-order/recommended"],
   "rules": {
-    "no-console": 0
-  },
-  "extends": "eslint:recommended"
+    "no-console": 0,
+    "import-order/import-order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": false
+        },
+        "order": ["builtin", "external", "parent", "index", "sibling"]
+      }
+    ]
+  }
 }
