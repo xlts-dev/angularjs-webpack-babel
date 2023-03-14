@@ -1,13 +1,9 @@
-const webpackConfig = require('./webpack.config.js')(null, { mode: 'test' });
-// clear entry file config (if exists)
-webpackConfig.entry = () => ({});
-
 module.exports = config => {
   config.set({
     basePath: '',
 
     // frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'webpack'],
 
     // This will be the new entry to webpack so it should just be a single file
     files: ['src/index.tests.js'],
@@ -19,7 +15,10 @@ module.exports = config => {
     },
 
     // Reference webpack config (single object)
-    webpack: webpackConfig,
+    webpack: {
+      entry: {},
+      mode: 'development',
+    },
 
     webpackMiddleware: {
       noInfo: true,
@@ -34,9 +33,9 @@ module.exports = config => {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO, // possible values: LOG_DISABLE, LOG_ERROR, LOG_WARN, LOG_INFO, LOG_DEBUG
-    autoWatch: true, // if true, Karma captures browsers, runs the tests and exits
+    autoWatch: false, // if true, Karma captures browsers, runs the tests and exits
     browsers: ['ChromeHeadless'],
-    singleRun: false,
+    singleRun: true,
     concurrency: Infinity,
   });
 };

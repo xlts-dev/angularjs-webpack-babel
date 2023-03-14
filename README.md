@@ -40,8 +40,26 @@ For production
 npm build
 ```
 
-For testing
+For unit testing
 
 ```
-npm test
+npm run test:unit
+```
+
+For lint
+
+```
+npm lint
+```
+
+For e2e testing
+
+```
+npm run test:e2e
+```
+
+For running production locally
+
+```
+npm run start:prod-local
 ```

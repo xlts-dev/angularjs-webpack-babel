@@ -32,15 +32,17 @@ export const versionStampComponent = {
       <span class="version"><img src="{{ $ctrl.angularjsMaterialIcon }}" alt=""> AngularJS Material v{{ $ctrl.versions.md }}</span>
     </div>
   `,
-  controller: VersionStampCtrl,
-};
+  controller: class VersionStampCtrl {
+    static $inject = ['$window'];
+    angularJsIcon = require('../assets/angularjs.svg');
+    angularjsMaterialIcon = require('../assets/angularjs-material.png');
+    versions;
 
-VersionStampCtrl.$inject = ['$window'];
-function VersionStampCtrl($window) {
-  this.angularJsIcon = require('../assets/angularjs.svg');
-  this.angularjsMaterialIcon = require('../assets/angularjs-material.png');
-  this.versions = {
-    angularjs: $window.angular.version,
-    md: $window.ngMaterial.version.full,
-  };
-}
+    constructor($window) {
+      this.versions = {
+        angularjs: $window.angular.version,
+        md: $window.ngMaterial.version.full,
+      };
+    }
+  },
+};

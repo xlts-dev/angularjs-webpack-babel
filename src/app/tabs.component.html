@@ -10,7 +10,7 @@
         <md-tab-label>Buttons</md-tab-label>
         <md-tab-body>
           <md-subheader>Flat Buttons</md-subheader>
-          <section layout="row" layout-align="start center" layout-wrap layout-margin>
+          <section data-testid="flat-buttons-section" layout="row" layout-align="start center" layout-wrap layout-margin>
             <md-button>Button</md-button>
             <md-button md-no-ink class="md-primary"
               >Primary
@@ -22,7 +22,7 @@
           </section>
           <md-divider></md-divider>
           <md-subheader>Raised Buttons</md-subheader>
-          <section layout="row" layout-align="start center" layout-wrap layout-margin>
+          <section data-testid="raised-buttons-section" layout="row" layout-align="start center" layout-wrap layout-margin>
             <md-button class="md-raised">Button</md-button>
             <md-button class="md-raised md-primary">Primary</md-button>
             <md-button class="md-raised md-accent">Accent</md-button>
@@ -32,14 +32,16 @@
         </md-tab-body>
       </md-tab>
       <md-tab>
-        <md-tab-label>tab two</md-tab-label>
+        <md-tab-label>Tab two</md-tab-label>
         <md-tab-body>
-          <div class="md-padding md-margin">tab two content</div>
+          <div data-testid="tab-two-content" class="md-padding md-margin">Tab two content</div>
         </md-tab-body>
       </md-tab>
       <md-tab>
-        <md-tab-label>tab three</md-tab-label>
-        <md-tab-body> <div class="md-padding md-margin">tab three content</div></md-tab-body>
+        <md-tab-label>Tab three</md-tab-label>
+        <md-tab-body>
+          <div data-testid="tab-three-content" class="md-padding md-margin">Tab three content</div>
+        </md-tab-body>
       </md-tab>
     </md-tabs>
   </div>
