@@ -33,9 +33,9 @@ module.exports = config => {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO, // possible values: LOG_DISABLE, LOG_ERROR, LOG_WARN, LOG_INFO, LOG_DEBUG
-    autoWatch: false, // if true, Karma captures browsers, runs the tests and exits
+    autoWatch: true, // if true, Karma captures browsers, runs the tests and exits
     browsers: ['ChromeHeadless'],
-    singleRun: true,
+    singleRun: false,
     concurrency: Infinity,
   });
 };

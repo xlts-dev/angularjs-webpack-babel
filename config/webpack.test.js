@@ -1,8 +1,13 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
+/*
+  We can't use the .mjs extension due to the fact that we are importing the configuration for testing purposes into karma,
+  which is in commonjs format and not module format. Therefore, we need to keep the same format as the karma configuration.
+ */
+
 module.exports = () => ({
-  entry: {},
+  // entry: {}, // Commented out, as the entry point for the unit test is defined in the karma configuration via the files attribute
   devtool: false,
   devServer: {
     https: false,

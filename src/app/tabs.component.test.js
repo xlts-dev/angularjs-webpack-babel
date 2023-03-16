@@ -1,23 +1,22 @@
 describe('TabsCtrl', () => {
   let $componentController;
-  let scope;
+  let $rootScope;
 
   beforeEach(angular.mock.module('AngularJSApp'));
   beforeEach(
-    angular.mock.inject((_$componentController_, $rootScope) => {
-      scope = $rootScope.$new(true);
+    angular.mock.inject((_$componentController_, _$rootScope_) => {
       $componentController = _$componentController_;
+      $rootScope = _$rootScope_;
     })
   );
 
   it('should be defined', () => {
-    const ctrl = $componentController('appTabs', { $scope: scope }, { $digestCount: 0 });
-    scope.$watch('ctrl.$digestCount', () => ctrl.$digestCount++);
+    const ctrl = $componentController('appTabs');
+    expect(ctrl.$digestCount).toBe(0);
 
-    expect(ctrl.$digestCount).toEqual(0);
-
-    scope.$apply();
-
-    expect(ctrl.$digestCount).toEqual(1);
+    $rootScope.$digest();
+    // Expect `2`, because AngularJS always runs on more digest at the end to
+    // to make sure there are no new changes.
+    expect(ctrl.$digestCount).toBe(2);
   });
 });
