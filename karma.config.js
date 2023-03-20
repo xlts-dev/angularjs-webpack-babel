@@ -12,7 +12,6 @@ module.exports = config => {
 
     // Preprocess test index and test files using webpack (will run babel)
     preprocessors: {
-      'src/main.js': ['webpack'],
       'src/index.tests.js': ['webpack'],
       'src/**/*.test.js': ['webpack'],
     },
