@@ -15,7 +15,7 @@ describe('TabsCtrl', () => {
     expect(ctrl.$digestCount).toBe(0);
 
     $rootScope.$digest();
-    // Expect `2`, because AngularJS always runs on more digest at the end to
+    // Expect `2`, because AngularJS always runs one more digest at the end to
     // to make sure there are no new changes.
     expect(ctrl.$digestCount).toBe(2);
   });
