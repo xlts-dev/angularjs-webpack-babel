@@ -43,9 +43,8 @@
       "url": "https://github.com/jzolnowski"
     }
   ],
-  "main": "main.js",
   "scripts": {
-    "pre-commit": "lint-staged && npm run lint",
+    "pre-commit": "lint-staged",
     "build:templates": "gulp templates",
     "start:server": "webpack-dev-server --open --mode development --config config/webpack.dev.mjs",
     "watch:templates": "gulp watch",
@@ -53,9 +52,9 @@
     "lint": "eslint .",
     "test:unit": "karma start karma.config.js",
     "test:unit:watch": "npm run build:templates && run-p test:unit watch:templates",
-    "test:unit:single": "npm run build:templates && karma start karma.config.js --single-run",
+    "test:unit:single": "run-s build:templates \"test:unit -- --single-run\"",
     "build": "npm run build:templates && webpack --mode production --config config/webpack.prod.mjs",
-    "start:prod-local": "cd dist && http-server -p 4200 -c-1 -b",
+    "start:prod-local": "http-server dist -p 4200 -c-1 -b",
     "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html}\"",
     "test:e2e": "playwright test",
     "test:e2e:debug": "playwright test --project chromium --headed",

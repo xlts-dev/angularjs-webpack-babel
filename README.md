@@ -40,10 +40,16 @@ For production
 npm build
 ```
 
-For unit testing
+For single run unit testing
 
 ```
-npm run test:unit
+npm run test:unit:single
+```
+
+For watch unit testing
+
+```
+npm run test:unit:watch
 ```
 
 For lint
@@ -56,6 +62,12 @@ For e2e testing
 
 ```
 npm run test:e2e
+```
+
+For test the app (lint, unit and e2e testing)
+
+```
+npm run test
 ```
 
 For running production locally
