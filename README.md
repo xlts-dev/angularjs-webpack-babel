@@ -37,25 +37,25 @@ npm start
 For production
 
 ```
-npm build
+npm run build
 ```
 
-For single run unit testing
+For running the unit tests once
 
 ```
 npm run test:unit:single
 ```
 
-For watch unit testing
+For running the unit tests in watch mode
 
 ```
 npm run test:unit:watch
 ```
 
-For lint
+For linting
 
 ```
-npm lint
+npm run lint
 ```
 
 For e2e testing
@@ -64,10 +64,10 @@ For e2e testing
 npm run test:e2e
 ```
 
-For test the app (lint, unit and e2e testing)
+For running all checks/tests for the app (lint, unit and e2e tests)
 
 ```
-npm run test
+npm test
 ```
 
 For running production locally
