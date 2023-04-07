@@ -1,22 +1,19 @@
-//? our webpack config imports as a function, and running it returns the required object to be used below
-const webpackConfig = require('./webpack.config.js')(null, { mode: 'test' });
-// clear entry file config (if exists)
-webpackConfig.entry = () => ({});
+const webpackConfig = require('./config/webpack.test.js')();
 
 module.exports = config => {
   config.set({
     basePath: '',
 
     // frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'webpack'],
 
     // This will be the new entry to webpack so it should just be a single file
-    files: ['src/index.tests.js'],
+    files: ['src/main.js', 'src/index.tests.js'],
 
     // Preprocess test index and test files using webpack (will run babel)
     preprocessors: {
+      'src/main.js': ['webpack'],
       'src/index.tests.js': ['webpack'],
-      'src/**/*.test.js': ['webpack'],
     },
 
     // Reference webpack config (single object)

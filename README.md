@@ -37,11 +37,41 @@ npm start
 For production
 
 ```
-npm build
+npm run build
 ```
 
-For testing
+For running the unit tests once
+
+```
+npm run test:unit:single
+```
+
+For running the unit tests in watch mode
+
+```
+npm run test:unit:watch
+```
+
+For linting
+
+```
+npm run lint
+```
+
+For e2e testing
+
+```
+npm run test:e2e
+```
+
+For running all checks/tests for the app (lint, unit and e2e tests)
 
 ```
 npm test
+```
+
+For running production locally
+
+```
+npm run start:prod-local
 ```
