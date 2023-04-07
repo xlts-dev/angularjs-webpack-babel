@@ -67,8 +67,8 @@
     "last 2 versions"
   ],
   "engines": {
-    "node": ">=18",
-    "npm": "9"
+    "node": ">=16",
+    "npm": ">=8"
   },
   "dependencies": {
     "angular": "npm:@xlts.dev/angular@1.9.1",
