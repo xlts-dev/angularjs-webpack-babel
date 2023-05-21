@@ -60,7 +60,7 @@
     "test:e2e:debug": "playwright test --project chromium --headed",
     "test:e2e:report": "npx playwright show-report",
     "test": "run-s lint test:unit:single test:e2e",
-    "update": "npm-check -u",
+    "update": "ncu -u && npm install",
     "prepare": "husky install && npx playwright install"
   },
   "browserslist": [
@@ -116,7 +116,7 @@
     "lint-staged": "13.1.0",
     "mini-css-extract-plugin": "^2.7.2",
     "ng-hot-reload-loader": "^3.3.2",
-    "npm-check": "^6.0.1",
+    "npm-check-updates": "^16.10.12",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.21",
     "postcss-loader": "7.0.2",
